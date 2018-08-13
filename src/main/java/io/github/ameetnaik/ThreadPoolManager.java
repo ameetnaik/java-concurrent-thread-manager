@@ -13,6 +13,8 @@ public class ThreadPoolManager {
 	private static final int THREAD_POOL_SIZE = 5;
 
 	private int poolSize;
+	
+	private Callable<?> callback;
 
 	private List<Callable<?>> taskList;
 
@@ -71,8 +73,10 @@ public class ThreadPoolManager {
 		}
 	}
 
-	protected void callbackThreadDone() {
-
+	protected void callbackThreadDone() throws Exception {
+		if (null != getCallback() && getCallback() instanceof Callable) {
+			getCallback().call();
+		}
 	}
 
 	public static void main(String[] args) {
@@ -96,4 +100,12 @@ public class ThreadPoolManager {
 		this.taskList = taskList;
 	}
 
+	public Callable<?> getCallback() {
+		return callback;
+	}
+
+	public void setCallback(Callable<?> callback) {
+		this.callback = callback;
+	}
+	
 }
