@@ -52,9 +52,10 @@ public class ThreadPoolManager {
 				if (runningList.size() == iPoolSize) {
 					for (int i = 0; i < runningList.size(); i++) {
 						if (runningList.get(i).isDone()) {
-							//override to implement messaging when thread is done
-							callbackThreadDone();
 							runningList.remove(i);
+							//override to implement messaging when thread is done or 
+							//provide a Callable method
+							callbackThreadDone();
 						}
 					}
 				}
