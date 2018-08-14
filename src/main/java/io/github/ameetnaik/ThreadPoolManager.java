@@ -80,11 +80,6 @@ public class ThreadPoolManager {
 		}
 	}
 
-	public static void main(String[] args) {
-		ThreadPoolManager threadPoolManager = new ThreadPoolManager();
-		threadPoolManager.runManager();
-	}
-	
 	public int getPoolSize() {
 		return poolSize;
 	}
