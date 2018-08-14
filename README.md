@@ -1,5 +1,4 @@
 # Java Thread Pool Manager
-Java Thread Pool Manager
 
 <p align="center">
   <a href="https://travis-ci.org/ameetnaik/java-concurrent-thread-manager">
@@ -10,7 +9,6 @@ Java Thread Pool Manager
   </a>
 </p>
 
-This project is configured with Maven.
 
 ## Usage
 
@@ -41,8 +39,10 @@ Create an List of Callable<V> tasks
 
 ```
 
+
 ## Contributor
 Ameet Naik
+
 
 ## License
 [MIT License](LICENSE)
