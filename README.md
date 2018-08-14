@@ -15,6 +15,8 @@
 Create an List of Callable<V> tasks
 
 ```java
+	
+	import java.util.concurrent.Callable;
 
 	public class Task implements Callable<String> [
 
