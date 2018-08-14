@@ -41,6 +41,36 @@ Create an List of Callable<V> tasks
 
 ```
 
+## Controlling number of threads
+
+
+```java
+
+	ThreadPoolManager threadPoolManager = new ThreadPoolManager(20);
+
+	// OR
+	
+	threadPoolManager.setPoolSize(20);	
+
+```
+
+## Controlling messaging after threads complete
+
+```java
+
+	ThreadPoolManager threadPoolManager = new ThreadPoolManager();
+	threadPoolManager.setCallback(new Callable<String>(){
+		@Override
+		public String call() throws Exception {	
+			// implement code to be called when threads are done running
+			System.out.println("Thread done.");
+		}
+	});
+
+```
+
+
+
 
 ## Contributor
 Ameet Naik
