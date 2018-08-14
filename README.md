@@ -12,7 +12,7 @@
 
 ## Usage
 
-Create an List of Callable<V> tasks
+Create a List of Callable tasks
 
 ```java
 	
