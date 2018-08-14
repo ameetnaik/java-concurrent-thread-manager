@@ -23,6 +23,7 @@ Create an List of Callable<V> tasks
 		@Override
 		public String call() throws Exception {	
 			// implement code to run concurrently
+			return "";
 		}
 	}
 
@@ -64,13 +65,11 @@ Create an List of Callable<V> tasks
 		public String call() throws Exception {	
 			// implement code to be called when threads are done running
 			System.out.println("Thread done.");
+			return "";
 		}
 	});
 
 ```
-
-
-
 
 ## Contributor
 Ameet Naik
