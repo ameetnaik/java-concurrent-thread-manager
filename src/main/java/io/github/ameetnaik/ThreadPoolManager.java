@@ -16,17 +16,17 @@ public class ThreadPoolManager {
 	
 	private Callable<?> callback;
 
-	private List<Callable<?>> taskList;
+	private ArrayList<Callable<String>> taskList;
 
-	ThreadPoolManager(){
+	public ThreadPoolManager(){
 		poolSize = THREAD_POOL_SIZE;
 	}
 
-	ThreadPoolManager(int size){
+	public ThreadPoolManager(int size){
 		poolSize = size;
 	}
 
-	protected void runManager() {
+	public void runManager() {
 
 		ExecutorService pool = Executors.newFixedThreadPool(getPoolSize());
 
@@ -42,7 +42,7 @@ public class ThreadPoolManager {
 			while (getTaskList().size() > 0) {
 
 				while (runningList.size() < iPoolSize) {
-					Callable<?> task = getTaskList().get(0);
+					Callable<?> task = (Callable<?>) getTaskList().get(0);
 					FutureTask<?> queueTask = new FutureTask(task);
 					pool.execute(queueTask);
 					runningList.add(queueTask);
@@ -88,12 +88,12 @@ public class ThreadPoolManager {
 		this.poolSize = poolSize;
 	}
 
-	public List<Callable<?>> getTaskList() {
+	public ArrayList<Callable<String>> getTaskList() {
 		return taskList;
 	}
 
-	public void setTaskList(List<Callable<?>> taskList) {
-		this.taskList = taskList;
+	public void setTaskList(ArrayList<Callable<String>> guidList) {
+		this.taskList = guidList;
 	}
 
 	public Callable<?> getCallback() {
