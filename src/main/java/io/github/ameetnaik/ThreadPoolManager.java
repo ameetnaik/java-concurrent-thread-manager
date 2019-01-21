@@ -41,7 +41,7 @@ public class ThreadPoolManager {
 
 			while (getTaskList().size() > 0) {
 
-				while (runningList.size() < iPoolSize) {
+				while (runningList.size() < iPoolSize && getTaskList().size() > 0) {
 					Callable<?> task = (Callable<?>) getTaskList().get(0);
 					FutureTask<?> queueTask = new FutureTask(task);
 					pool.execute(queueTask);
